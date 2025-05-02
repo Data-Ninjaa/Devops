@@ -11,13 +11,19 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building...'
-                // Example: sh './build.sh'
             }
         }
 
         stage('Test') {
             steps {
                 echo 'Running tests...'
+            }
+        }
+
+        stage('Run Python Script') {
+            steps {
+                echo 'Running Python file...'
+                sh 'python3 hello.py'   // <-- change "script.py" to your actual filename
             }
         }
 
